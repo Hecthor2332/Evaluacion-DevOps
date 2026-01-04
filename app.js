@@ -1,8 +1,8 @@
 const express = require('express'); 
 const app = express();
-const port = process.env.port || 3000;  
+const PORT = process.env.PORT || 3000;  
 
-app.get('/index', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 }); 
 
@@ -10,8 +10,8 @@ app.get('/main', (req, res) => {
     res.sendFile(__dirname + '/public/main.html');
 }); 
 
-app.listen(port, ()=> {
-    console.log(`Servidor escuchando en http://localhost:${port}`)
+app.listen(PORT, ()=> {
+    console.log(`Servidor escuchando en http://localhost:${PORT}`)
 })
 
 
