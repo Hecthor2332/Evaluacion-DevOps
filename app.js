@@ -3,12 +3,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;  
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
-}); 
+    res.redirect('/main');
+})
 
 app.get('/main', (req, res) => {
     res.sendFile(__dirname + '/public/main.html');
 }); 
+
+app.get('/index', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+}); 
+
 
 app.listen(PORT, ()=> {
     console.log(`Servidor escuchando en http://localhost:${PORT}`)
